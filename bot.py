@@ -13,9 +13,10 @@ def who_am_i(message):
     name = message.from_user.first_name
     username = message.from_user.username
 
-    bot.send_message(
-        message.chat.id,
-        f"👤 Имя: {name}\n"
+    bot.reply_to(
+        message,
+        f"👤 Ты: {name}\n"
         f"🔹 Юзернейм: @{username if username else 'нет'}"
     )
+
 bot.infinity_polling()
