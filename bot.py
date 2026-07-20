@@ -8,9 +8,6 @@ bot = telebot.TeleBot(TOKEN)
 def start(message):
     bot.send_message(message.chat.id, "Привет! Я запущен 🤖")
 
-@bot.message_handler(func=lambda message: True)
-def answer(message):
-    bot.send_message(message.chat.id, "Ты написал: " + message.text)
 @bot.message_handler(func=lambda message: message.text.lower() == "кто я")
 def who_am_i(message):
     name = message.from_user.first_name
