@@ -1,12 +1,13 @@
 import telebot
 
-TOKEN = "8641592656:AAFfE4luC7BEdIBZvopcyaWscaZ33wamxTg"
+TOKEN = "8641592656:AAHirlMfRDTo3SCefY0lJKcoVmEHZj3ywiw"
 
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=["start"])
 def start(message):
     bot.send_message(message.chat.id, "Привет! Я запущен 🤖")
+
 
 @bot.message_handler(func=lambda message: message.text.lower() == "кто я")
 def who_am_i(message):
@@ -18,8 +19,9 @@ def who_am_i(message):
         f"👤 Ты: {name}\n"
         f"🔹 Юзернейм: @{username if username else 'нет'}"
     )
-    
-    @bot.message_handler(commands=["help"])
+
+
+@bot.message_handler(commands=["help"])
 def help_cmd(message):
     bot.send_message(
         message.chat.id,
@@ -28,5 +30,6 @@ def help_cmd(message):
         "кто я — мой профиль\n"
         "/help — помощь"
     )
+
 
 bot.infinity_polling()
