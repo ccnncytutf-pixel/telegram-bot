@@ -56,6 +56,7 @@ def actions(message):
         "испугать": "👻 {name} испугал {target}",
         "подарить": "🎁 {name} подарил подарок {target}",
         "поздравить": "🎉 {name} поздравил {target}"
+        "вебать": "🖕 {name} вебал {target}"
     }
 
     for action, reply in actions.items():
