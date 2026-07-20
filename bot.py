@@ -82,6 +82,7 @@ def warn(message):
     except:
         bot.reply_to(message, "❌ Нет прав.")
         @bot.message_handler(commands=["мут"])
+        
 def mute(message):
     if not message.reply_to_message:
         bot.reply_to(message, "❌ Ответь на сообщение.")
@@ -196,6 +197,7 @@ def clean(message):
         bot.send_message(message.chat.id, "🧹 Чистка выполнена!")
     except:
         bot.reply_to(message, "❌ Нет прав на удаление")
+        
         @bot.message_handler(func=lambda m: True)
 def actions(message):
 
