@@ -32,4 +32,15 @@ def help_cmd(message):
     )
 
 
+@bot.message_handler(func=lambda message: message.text.lower().startswith("ударить"))
+def hit(message):
+    text = message.text.split()
+
+    if len(text) > 1:
+        target = " ".join(text[1:])
+        bot.reply_to(message, f"👊 {message.from_user.first_name} ударил {target} 😄")
+    else:
+    bot.reply_to(message, "Кого ударить? Напиши: ударить @ник")
+
+
 bot.infinity_polling()
