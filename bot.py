@@ -18,5 +18,15 @@ def who_am_i(message):
         f"👤 Ты: {name}\n"
         f"🔹 Юзернейм: @{username if username else 'нет'}"
     )
+    
+    @bot.message_handler(commands=["help"])
+def help_cmd(message):
+    bot.send_message(
+        message.chat.id,
+        "📋 Команды:\n"
+        "/start — запуск\n"
+        "кто я — мой профиль\n"
+        "/help — помощь"
+    )
 
 bot.infinity_polling()
